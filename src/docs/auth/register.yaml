@@ -1,0 +1,27 @@
+User Register:
+---
+tags:
+  - Authentication
+parameters:
+  - name: body
+    in: body
+    required: true
+    description: The body should contain the user registration credentials
+    schema:
+      type: object
+      required:
+        - email
+        - password
+      properties:
+        email:
+          type: email
+          example: user@gmail.com
+        password:
+          type: string
+          format: password
+          example: "********"
+responses:
+  200:
+    description: When a user successfully registers and is added to db
+  400:
+    description: Fails to register!
